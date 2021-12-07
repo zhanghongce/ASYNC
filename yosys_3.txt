@@ -1,0 +1,4 @@
+read_verilog -formal async_after_2.v
+prep
+setundef -undriven -expose
+write_btor -s async_after_2.btor
