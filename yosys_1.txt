@@ -1,0 +1,7 @@
+read_verilog -formal async_after_2.v
+prep -top counter
+flatten
+memory -nomap
+hierarchy -check
+setundef -undriven -init -expose
+write_btor  -s async_after_2.v
