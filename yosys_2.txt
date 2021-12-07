@@ -1,0 +1,5 @@
+read_verilog -formal async-counter.v
+prep -top counter
+clk2fflogic
+write_verilog async_after.v
+write_btor -s async-counter.btor
