@@ -59,28 +59,28 @@ module counter(clk, count);
   always @* if (1'h1) assert(_20_);
   
   reg _04_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _04_ff<=count[2];
   end
   initial _04_ff=0;
   assign _04_=_04_ff;
 
   reg _05_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _05_ff<=count[1];
   end
   initial _05_ff=0;
   assign _05_=_05_ff;
   
   reg _06_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _06_ff<=coount[0];
   end
   initial _06_ff=0;
   assign _06_=_06_ff;
   
   reg _07_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _07_ff<=clk;
   end 
   initial _07_ff=0;
@@ -94,56 +94,56 @@ module counter(clk, count);
   
     
   reg _08_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _08_ff<=_03_;
   end 
   initial _08_ff=0;
   assign _08_=_08_ff;
     
   reg _09_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _09_ff<=_02_;
   end 
   initial _09_ff=0;
   assign _09_=_09_ff;
 
   reg _10_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _10_ff<=_01_;
   end 
   initial _10_ff=0;
   assign _10_=_10_ff;
 
   reg _11_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _11_ff<=_00_;
   end 
   initial _11_ff=0;
   assign _11_=_11_ff;
   
   reg _12_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _12_ff<=count[3];
   end 
   initial _12_ff=0;
   assign _12_=_12_ff;
  
    reg _13_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _13_ff<=count[2];
   end 
   initial _13_ff=0;
   assign _13_=_13_ff;
   
     reg _14_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _14_ff<=count[1];
   end 
   initial _14_ff=0;
   assign _14_=_14_ff;
   
      reg _15_ff;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   _15_ff<=count[0];
   end 
   initial _15_ff=0;
@@ -152,7 +152,7 @@ module counter(clk, count);
  
    reg count3_ff,count2_ff,count1_ff,count0_ff;
    wire count3_ff_enable,count2_ff_enable,count1_ff_enable,count0_ff_enable;
-   always @(posedge gclk) begin
+   always @(posedge clk) begin
    if(count3_ff_enable)
     count3_ff<=_16_ ? _08_ : _12_;
    if(count2_ff_enable)
@@ -176,7 +176,7 @@ module counter(clk, count);
   
   reg less_9_ff;
   wire less_9_ff_enable;
-  always @(posedge gclk) begin
+  always @(posedge clk) begin
   if(less_9_ff_enable)
   less_9_ff<=count < (* src = "test.v:10" *) 4'h9;
   end
